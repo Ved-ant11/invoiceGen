@@ -1,6 +1,6 @@
 import { toast } from "@/components/ui/sonner";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = process.env.VITE_API_URL;
 
 // Helper function to handle API responses
 const handleResponse = async (response) => {

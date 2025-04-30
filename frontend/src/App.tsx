@@ -32,16 +32,16 @@ const App = () => (
       <BrowserRouter>
         <AuthProvider>
           <Routes>
-            {/* Public routes */}
+            
             <Route path="/" element={<Index />} />
             
-            {/* Guest routes (redirect to dashboard if authenticated) */}
+            
             <Route element={<GuestGuard />}>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
             </Route>
             
-            {/* Protected routes (redirect to login if not authenticated) */}
+            
             <Route element={<AuthGuard />}>
               <Route element={<MainLayout />}>
                 <Route path="/dashboard" element={<Dashboard />} />
@@ -55,7 +55,7 @@ const App = () => (
               </Route>
             </Route>
             
-            {/* 404 route */}
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
