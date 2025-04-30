@@ -30,7 +30,7 @@ app.use("/api/invoices", invoiceRoutes);
 app.get("/", (req, res) => res.send("InvoiceGen Backend Running"));
 
 mongoose
-  .connect("mongodb+srv://ved:Vedant4478@cluster0.8ex3f.mongodb.net/invoicegen1?retryWrites=true&w=majority&appName=Cluster0", {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
